@@ -1,5 +1,5 @@
 #getting OS and Python image from DockerHub
-FROM python:3.13.1-slim-bullseye
+FROM python:3.13-slim-bullseye
 
 WORKDIR /docker
 
