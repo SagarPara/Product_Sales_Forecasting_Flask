@@ -3,6 +3,7 @@ import pytest
 from sales_prediction import app
 
 
+
 #proxy to a live server
 @pytest.fixture
 def client():
