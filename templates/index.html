@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<body style="background-color: rgb(203, 155, 155);">
-
-<h2>Sales Predition</h2><br>
-
-<form action = "/submit" method = "POST">
-    <label for="region">Region:</label><br>
-    <input type="text" id="region" name="region" value="R1"><br><br>
-
-    <label for="location">Location:</label><br>
-    <input type="text" id="location" name="location" value="L1"><br><br>
-
-    <label for="store">StoreType:</label><br>
-    <input type="text" id="store" name="store" value="S1"><br><br>
-
-    <label for="holiday">Holiday:</label><br>
-    <input type="number" id="holiday" name="holiday" value=1><br><br>
-
-    <label for="discount">Discount:</label><br>
-    <input type="text" id="discount" name="discount" value="No"><br><br>
-
-    <label for="order">Order:</label><br>
-    <input type="number" id="order" name="order" value=20 min=20><br><br>
-
-   
-    <input type="submit" value="Submit">
-
-</form>
-
-<p> If you click the submit button, the form data will be sent to a page called "/submit".</p>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sales Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8d7da;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center text-danger">Sales Prediction</h2>
+        <form action="/submit" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Store Type:</label>
+                <input type="text" class="form-control" name="store_enc" value="S1" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Location:</label>
+                <input type="text" class="form-control" name="location_enc" value="L1" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Region:</label>
+                <input type="text" class="form-control" name="region_enc" value="R1" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Holiday:</label>
+                <input type="number" class="form-control" name="Holiday" value="1">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Discount:</label>
+                <input type="text" class="form-control" name="Discount" value="No">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Order:</label>
+                <input type="number" class="form-control" name="Order" value="20" min="20">
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

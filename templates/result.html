@@ -1,19 +1,52 @@
-<html>
-    <h2> Final Results </h2><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Final Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #c4d9df;
+        }
+        .result-container {
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .result-container h2 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result-container p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .result-highlight {
+            font-weight: bold;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
 
-    <body style ="background-color: rgb(196,217,223);">
-        Region : <b> {{ Region_Code }}</b><br>
-        Location : <b> {{ Location_Type }}</b><br>
-        Store : <b> {{ Store_Type }}</b><br>
-        Holiday : <b> {{ Holiday }}</b><br>
-        Discount : <b> {{ Discount }}</b><br>
-        Order : <b> {{ Order }}</b><br>
-        
-        <br><br><br>
-        
-        <p style="margin-top: 20px;">Predicted Insurance Cost is : <b>{{ round(result,0) }}</b></p>
-    </body>
-    
+    <div class="container d-flex justify-content-center">
+        <div class="result-container">
+            <h2>Final Results</h2>
+            <p>Region: <span class="result-highlight">{{ Region_Code }}</span></p>
+            <p>Location: <span class="result-highlight">{{ Location_Type }}</span></p>
+            <p>Store: <span class="result-highlight">{{ Store_Type }}</span></p>
+            <p>Holiday: <span class="result-highlight">{{ Holiday }}</span></p>
+            <p>Discount: <span class="result-highlight">{{ Discount }}</span></p>
+            <p>Order: <span class="result-highlight">{{ Order }}</span></p>
+            <hr>
+            <p class="text-center mt-4 fs-5">Predicted Sales Cost: <span class="result-highlight">{{ result }}</span></p>
+        </div>
+    </div>
 
-
+</body>
 </html>
