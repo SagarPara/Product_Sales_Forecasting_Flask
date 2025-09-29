@@ -18,9 +18,9 @@ def test_home(client):
 
 def test_submit(client):
     test_home = {
-        "Region_Code": "R1",
-        "Location_Type": "L2",
-        "Store_Type": "S1",
+        "region_enc": "R1",
+        "location_enc": "L2",
+        "store_enc": "S1",
         "Holiday": 1,
         "Discount": "Yes",
         "Order": 20
