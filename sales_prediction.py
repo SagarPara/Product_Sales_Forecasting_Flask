@@ -50,10 +50,15 @@ def welcome():
 
 @app.route("/submit", methods=["POST"])
 def submit_form():
-        #POST request along with data
-        sales_req = request.form #Force ensure json parsing
-        print("🚀 Received Form Data:", dict(sales_req), flush=True)
         
+        #sales_req = request.form #Force ensure json parsing
+        #print("🚀 Received Form Data:", dict(sales_req), flush=True)
+        
+        #POST request along with data; Support both form data and JSON
+        sales_req = request.form if request.form else request.get_json(force=True)
+        print("🚀 Received data:", dict(sales_req), flush=True)
+
+
         # Encode store_category
         store = sales_req.get("store_enc", "").strip()
         if store is None or store not in store_encoder.classes_:
